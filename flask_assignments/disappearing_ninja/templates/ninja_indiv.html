@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Individual Ninja</title>
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename = 'css/dn_style.css')}}">
+  </head>
+  <body>
+    {% if colour == "blue" %}
+    <img src="{{ url_for('static', filename='img/blue.jpg') }}">
+    {% endif %}
+
+    {% if colour == "red" %}
+    <img src="{{ url_for('static', filename='img/red.jpg') }}">
+    {% endif %}
+
+    {% if colour == "purple" %}
+    <img src="{{ url_for('static', filename='img/purple.jpg') }}">
+    {% endif %}
+
+    {% if colour == "orange" %}
+    <img src="{{ url_for('static', filename='img/orange.jpg') }}">
+    {% endif %}
+
+    {% if colour != "orange" and colour != "blue" and colour != "purple" and colour != "red" %}
+    <img src="{{ url_for('static', filename='img/notapril.jpg') }}">
+    {% endif %}
+  </body>
+</html>

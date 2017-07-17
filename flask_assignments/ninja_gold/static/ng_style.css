@@ -1,0 +1,69 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+  width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+#gold{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+.options{
+  display: flex;
+}
+
+.farm, .house, .cave, .casino{
+  border: 1px solid black;
+  margin:auto;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+}
+
+.farm h3, .house h3, .cave h3, .casino h3{
+  margin-top: 40px;
+}
+
+.farm p, .house p, .cave p, .casino p{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#activities{
+  margin-top: 10px;
+  margin-left: 30px;
+  text-align: left;
+}
+
+#activities p{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.box{
+  height: 300px;
+  width: 900px;
+  border: 1px solid black;
+  overflow:auto;
+}
+
+.box li{
+  margin-left: 10px;
+}
+
+ul{
+  list-style: none;
+}
+
+button{
+  margin-top: 10px;
+  margin-left: 30px;
+  padding: 5px 10px 5px 10px;
+  radius: 2px;
+}

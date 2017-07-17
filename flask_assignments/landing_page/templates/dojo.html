@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New Dojo Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div id="dojo">
+      <h2>New Dojo Form: Register your dojo with us!</h2>
+      <form class="newdojo" action="" method="post">
+        <label for="dojoname">Dojo Name:</label>
+        <input type="text" name="dojoname">
+
+        <label for="dojohead">Head of Dojo:</label>
+        <input type="text" name="dojohead">
+
+        <label for="dojostudents">Number of Students</label>
+        <select class="students" name="dojostudents">
+          <option value="lessthan10"> < 10 </option>
+          <option value="tentofifty"> 10 - 50 </option>
+          <option value="morethan50"> 50+ </option>
+        </select>
+        <button type="submit" name="submit">Submit</button>
+      </form>
+      <a href='/'><button class = "back">Back</button></a>
+    </div>
+  </body>
+</html>

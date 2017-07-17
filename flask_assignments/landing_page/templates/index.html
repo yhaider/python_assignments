@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+    <meta name="description" content="About ninjas and dojos and using Flask!">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div id="root">
+      <h1>Welcome to Landing Page Assignment!</h1>
+      <a id = "ninjabutton" href="/ninjas"><button>To Ninjas</button></a>
+      <a id = "dojobutton" href ="/dojos/new"><button>To Dojos</button></a>
+    </div>
+  </body>
+</html>

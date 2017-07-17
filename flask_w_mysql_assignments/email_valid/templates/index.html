@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Email Validation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='evi_style.css')}}">
+  </head>
+  <body>
+    {% if session['valid'] == False %}
+      <div class="notvalid">
+        <p><b>Email not valid!</b></p>
+      </div>
+    {% endif %}
+
+    <div class="form">
+      <form action="/process" method="post">
+        <p>Email Address:</p> <input type="text" name="email" placeholder="Type email here...">
+        <input type="submit" name="submit" value="Validate and Add email">
+      </form>
+    </div>
+
+  </body>
+</html>

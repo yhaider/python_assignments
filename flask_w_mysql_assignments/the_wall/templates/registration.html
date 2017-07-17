@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'wall_i.css')}}">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Dosis|Karla|Muli|Open+Sans+Condensed:300|PT+Sans|PT+Sans+Narrow|Quicksand');
+    </style>
+  </head>
+  <body>
+    <div class="register">
+      <h1>Register for The Wall</h1>
+      <form action="/process/register" method="post">
+        <label for="first_name">First Name: </label><input type="text" name="first_name" placeholder="Your first name here..." class="textarea"><br>
+        <label for="last_name">Last Name: </label><input type="text" name="last_name" placeholder="Your last name here..." class="textarea"><br>
+        <label for="email">Email: </label><input type="text" name="email" placeholder="Your email here..." class="textarea"><br>
+        <label for="password">Password: </label><input type="password" name="password" placeholder="Create a password at least 8 characters..." class="textarea"><br>
+        <label for="pass_con">Password Confirmation: </label><input type="password" name="pass_con" placeholder="Confirm your password above..." class="textarea"><br>
+        <input type="submit" name="submit" value="Register" class = "button registerb">
+      </form>
+      <a href="/"><button type="button" name="button" class = "button">Return to Main</button></a>
+    </div>
+
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="registermsg">
+            <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      {% endwith %}
+  </body>
+</html>

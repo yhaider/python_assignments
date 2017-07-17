@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dojo Survey Index</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'ds_style.css')}}">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre');
+    </style>
+  </head>
+  <body>
+    <div id="survey">
+      <h1>Dojo Survey</h1>
+      <form class="dojo_survey" action="/result" method="post">
+        <ul>
+          <div id="leftalign">
+            <li><label for="name">Your Name:</label>
+            <input type="text" name="name"></li>
+
+            <li><label for="location">Dojo Location:</label>
+            <input type="text" name="location"></li>
+
+            <li><label for="favelang">Favourite Language:</label>
+            <select name="favelang">
+              <option value="Python">Python</option>
+              <option value="HTML">HTML</option>
+              <option value="C++">C++</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="C#">C#</option>
+              <option value="Haskell">Haskell</option>
+              <option value="Ruby">Ruby</option>
+              <option value="Other">Other</option>
+            </select></li>
+            <li><label for="comment">Comment:</label>
+            <textarea name="comment"></textarea></li>
+          </div>
+          <li><input type="submit" name="Submit" class="submit"></li>
+        </ul>
+      </form>
+    </div>
+  </body>
+</html>

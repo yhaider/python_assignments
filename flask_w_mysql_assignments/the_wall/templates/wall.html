@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Wall</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'wall_i.css')}}">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Dosis|Karla|Muli|Open+Sans+Condensed:300|PT+Sans|PT+Sans+Narrow|Quicksand');
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <ul = "top">
+        <li><h1 class="title">The Wall</h1></li>
+        <li class="side"><p>Welcome {{ session['name'] }}.</p>
+          <a href="/edit"><button type="button" name="button">Edit Info</button></a>
+          <a href="/logout"><button type="button" name="button">Logout</button></a></li>
+      </ul>
+    </div>
+    <div class="wallmsg">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class=flashes>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+    </div>
+    <div class="posts">
+      <h2>Posts</h2>
+      <form action="/process/post" method="post">
+        <textarea name="post" rows="8" cols="80" placeholder="What are you thinking about..."></textarea><br>
+        <input type="submit" name="post" value="Post a message" class="postmsg">
+      </form>
+    </div>
+    <div class="messages">
+      {% if messages %}
+        {% for message in messages |reverse %}
+          <div class="indivmsg">
+            <form class="" action="/process/delete" method="post">
+            <input type="hidden" name="messageid" value="{{ message['id'] }}">
+            <input type="hidden" name="msg_user" value="{{message['user_id']}}">
+            <input type="hidden" name="msg_time" value="{{ message['created_at'].strftime('%M') }}">
+            <input type="submit" name="delete" value="🗑" class="delete">
+            </form>
+            <ul>
+              <li><h3>{{ message['first_name'] }} {{ message['last_name'] }}</h3></li>
+              <li><h4>{{ message['created_at'].strftime('%B %d %Y, %I:%M %p') }}</h4></li>
+            </ul>
+            <p>{{ message['message'] }}</p>
+          <div class="comments">
+            {% if comments %}
+              {% for comment in comments %}
+                {% if comment['message_id'] == message['id'] %}
+                <div class="indivcomm">
+                  <ul>
+                    <li><h4>{{ comment['first_name'] }} {{ comment['last_name'] }} </h4></li>
+                    <li><h5> {{ comment['created_at'].strftime('%B %d %Y, %I:%M %p') }}</h5></li>
+                    <li>
+                        <form class="" action="/process/deletecomm" method="post">
+                        <input type="hidden" name="comment_id" value="{{ comment['comment_id'] }}">
+                        <input type="hidden" name="com_time" value="{{ comment['created_at'] }}">
+                        <input type="hidden" name="user_comm" value="{{ comment['user_id'] }}">
+                        <input type="submit" name="delete" value="🗑" class="deletecomm">
+                        </form>
+                    </li>
+                  </ul>
+                  <p>{{ comment['comment'] }}</p>
+                </div>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+            <form action="/process/comment" method="post">
+              <input type="hidden" name="msg_id" value=" {{ message['id'] }}">
+              <h4>Post a comment</h4>
+              <textarea name="comment" rows="2" cols="30" placeholder="Respond here..."></textarea>
+              <input type="submit" name="postcomment" value="Comment" class="commentb">
+            </form>
+          </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </body>
+</html>

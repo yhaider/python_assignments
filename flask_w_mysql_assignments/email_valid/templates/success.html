@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Success!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'evi_style.css')}}">
+  </head>
+  <body>
+    <div class="success">
+      <p><b>Success!</b> The email address you entered ({{ email_address }}) is valid!</p>
+    </div>
+    <div class="emails">
+      <p><u>Email Addresses Entered</u></p>
+      <ul>
+        {% for email in emails %}
+        <li>{{ email['email'] }} {{email ['created_at'].strftime('%x %X %p')}}</li>
+        {% endfor %}
+      </ul>
+      <a href = '/'><button type="button" name="back">Add another</button></a>
+    </div>
+  </body>
+</html>

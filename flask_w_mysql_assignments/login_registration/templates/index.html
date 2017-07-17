@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Register and Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'log_reg.css')}}">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Dosis|Josefin+Sans|PT+Sans+Narrow|Poppins');
+    </style>
+  </head>
+  <body>
+    <div class="login">
+      <h1>Welcome Back, Login Below</h1>
+      <form action="/login" method="post">
+        <label for="email">Email:</label><input type="text" name="email" placeholder="Your registered email here..." class="textarea"><br>
+        <label for="password">Password:</label><input type="password" name="password" placeholder="Your account password here..." class="textarea"><br>
+        <input type="submit" name="submit" value="Login" class = "submitbutton">
+      </form>
+    </div>
+    <div class="messages">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class=flashes>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+    </div>
+    <div class="register">
+      <h1>Welcome Newcomer, Register Below</h1>
+      <form action="/process" method="post">
+        <label for="first_name">First Name:</label><input type="text" name="first_name" placeholder="Your first name here..." class="textarea"><br>
+        <label for="last_name">Last Name:</label><input type="text" name="last_name" placeholder="Your last name here..." class="textarea"><br>
+        <label for="email">Email:</label><input type="text" name="email" placeholder="Your email here..." class="textarea"><br>
+        <label for="password">Password:</label><input type="password" name="password" placeholder="Create a password at least 8 characters..." class="textarea"><br>
+        <label for="pass_con">Password Confirmation:</label><input type="password" name="pass_con" placeholder="Confirm your password above..." class="textarea"><br>
+        <input type="submit" name="submit" value="Register" class = "submitbutton">
+      </form>
+    </div>
+
+  </body>
+</html>

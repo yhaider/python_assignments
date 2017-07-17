@@ -1,0 +1,25 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+ul{
+  list-style: none;
+  padding-top: 10px;
+}
+
+#result{
+  width: 600px;
+  margin: auto;
+  text-align: center;
+  background: darkgrey;
+  border: 2px solid black;
+  margin-top: 250px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 5px;
+  font-family: 'Frank Ruhl Libre', sans-serif;
+}
+
+button{
+  padding: 5px 10px 5px 10px;
+}

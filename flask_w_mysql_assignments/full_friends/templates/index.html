@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Full Friends</title>
+  </head>
+  <body>
+    <h1>My Friends</h1>
+    <table border = 1>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Friend Since</th>
+      </tr>
+      {% for friend in friends %}
+        <tr>
+          <td>{{ friend['name'] }}</td>
+          <td>{{ friend['age'] }}</td>
+          <td>{{ friend['created_at'].strftime('%b %d %Y') }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+
+    <h2>Add a Friend</h2>
+    <form action='/add' method='POST'>
+      <label for="name">Name:<input type="text" name="name"></label><br>
+      <label for="age">Age:<input type="number" name="age" ></label><br>
+      <input type="submit" value="Add">
+    </form>
+  </body>
+</html>

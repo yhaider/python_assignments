@@ -1,0 +1,66 @@
+/*Landing Page Assignment*/
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+/*Main Page*/
+#root{
+  width: 1000px;
+  margin: auto;
+  text-align: center;
+  padding: 250px;
+  background: black;
+  color: white;
+  margin-top: 100px;
+}
+#root button{
+  padding: 5px 10px 5px 10px;
+  margin: 10px 0px 0px 0px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+}
+
+/*Ninjas Page*/
+
+#ninjas{
+  width: 1000px;
+  height: 73px;
+  margin: auto;
+  text-align: center;
+  padding: 250px;
+  background: black;
+  color: white;
+  margin-top: 100px;
+}
+
+#ninjas button{
+  padding: 5px 10px 5px 10px;
+  margin: 5px 0px 0px 0px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+}
+
+/*New Dojo Form Page*/
+
+#dojo{
+  width: 1000px;
+  height: 73px;
+  margin: auto;
+  text-align: center;
+  padding: 250px;
+  background: black;
+  color: white;
+  margin-top: 100px;
+}
+
+#dojo button{
+  padding: 5px 10px 5px 10px;
+  margin: 5px 0px 0px 0px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+}

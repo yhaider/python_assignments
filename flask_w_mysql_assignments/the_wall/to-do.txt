@@ -1,0 +1,22 @@
+The Wall:
+
+- Server:
+	Validation for login/registration
+	Connection to MySQL
+- index.html (‘/‘)
+	Welcome
+	buttons to direct to login or register
+
+- login.html: (‘/login’)
+	The login page
+	Involves email and pass
+
+- registration.html (‘/register’)
+	The registration page
+	first, last, email, pass, pass con
+
+- wall.html (‘/wall’)
+	welcomes individual user
+	log off button (clears session) —> redirects to index
+	post a message
+	message appears w name and date,

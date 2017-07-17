@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'wall_i.css')}}">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Dosis|Karla|Muli|Open+Sans+Condensed:300|PT+Sans|PT+Sans+Narrow|Quicksand');
+    </style>
+  </head>
+  <body>
+    <div class="loginform">
+      <h1>Log in to The Wall</h1>
+      <form action="/process/login" method="post">
+        <label for="email">Email: </label><input type="text" name="email" placeholder="Your registered email here..." class="textarea"><br>
+        <label for="password">Password: </label><input type="password" name="password" placeholder="Your account password here..." class="textarea"><br>
+        <input type="submit" name="submit" value="Login" class = "submitbutton">
+      </form>
+      <a href="/"><button type="button" name="button">Return to Main</button></a>
+    </div>
+
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="loginmsg">
+            <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      {% endwith %}
+
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>What's Your Name?</title>
+    <meta name="description" content="Put in your name and I'll tell you your name back!">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='wmn_style.css')}}">
+  </head>
+  <body>
+    <div id="root">
+      <h1>What's Your Name?</h1>
+      <p>Input your name below so I can get to know you!</p>
+      <form class="name" action="/process" method="post">
+        <label for="your_name">Your Name:</label>
+        <input type="text" name="your_name">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='wall_i.css')}}">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Dosis|Karla|Muli|Open+Sans+Condensed:300|PT+Sans|PT+Sans+Narrow|Quicksand');
+    </style>
+  </head>
+  <body>
+    <div class="edit">
+      <h1>Update Information</h1>
+      <form action="/process/edit" method="post">
+        <label for="first_name">First Name: </label><input type="text" name="first_name" value="{{ user['first_name']}}" class="textarea"><br>
+        <label for="last_name">Last Name: </label><input type="text" name="last_name" value="{{ user['last_name']}}" class="textarea"><br>
+        <label for="email">Email: </label><input type="text" name="email" value="{{ user['email']}}" class="textarea"><br>
+        <input type="submit" name="submit" value="Update" class = "button">
+      </form>
+      <a href="/wall"><button type="button" name="button" class="button">Back</button></a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  background-color: #B08B93;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.login{
+  margin: auto;
+  text-align: center;
+  margin-top: 100px;
+  background-color: #8EB4A5;
+  width: 300px;
+  padding: 20px;
+}
+.register{
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  background-color: #8EB4A5;
+  width: 300px;
+  padding: 20px;
+}
+
+form, label{
+  background-color: #99BEAC;
+}
+h1, p{
+  background-color: #99BEAC;
+}
+
+.submitbutton{
+  padding: 5px 10px 5px 10px;
+  background-color: #CCB5AF;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 2px;
+}
+
+.textarea{
+  background-color: white;
+}
+
+.success{
+  margin: auto;
+  text-align: center;
+  margin-top: 200px;
+  background-color: #8EB4A5;
+  width: 300px;
+  padding: 20px;
+}
+
+.buttons{
+  margin: auto;
+  text-align: center;
+  padding: 5px 10px 5px 10px;
+  background-color: #CCB5AF;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-radius: 2px;
+}
+
+.flashes{
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  background-color: #8EB4A5;
+  width: 100px;
+  padding: 20px;
+}
+
+ul{
+  list-style: none;
+}
+
+li{
+  background-color: #99BEAC;
+}

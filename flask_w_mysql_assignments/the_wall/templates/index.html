@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>THE WALL</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'wall_i.css')}}">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Dosis|Karla|Muli|Open+Sans+Condensed:300|PT+Sans|PT+Sans+Narrow|Quicksand');
+    </style>
+  </head>
+  <body>
+    <div class="welcome">
+      <h1>Welcome to The Wall</h1>
+      <p>What would you like to do?</p>
+      <a href="/login"><button type="button" name="button" class="loginb">Login</button></a>
+      <a href="/register"><button type="button" name="button">Register</button></a>
+    </div>
+
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="indexmsg">
+            <ul class=flashes>
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      {% endwith %}
+  </body>
+</html>

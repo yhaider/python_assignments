@@ -1,0 +1,26 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+.counter{
+  width: 200px;
+  margin: auto;
+  text-align: center;
+  margin-top: 200px;
+  font-family: 'Titillium Web', sans-serif;
+  padding: 10px 0px 20px 0px;
+  border: 1px solid black;
+  border-radius: 7px;
+}
+
+ul{
+  list-style: none;
+  display: flex;
+  margin-left: 60px;
+}
+button{
+  padding: 5px 10px 5px 10px;
+  margin-right: 3px;
+  border-radius: 2px;
+}

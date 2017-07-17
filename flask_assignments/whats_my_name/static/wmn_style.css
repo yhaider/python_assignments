@@ -1,0 +1,21 @@
+/*Whats My Name Style*/
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+  width: 500px;
+  margin: auto;
+  text-align:center;
+  padding: 200px 0px 0px 0px;
+}
+#root{
+  width: 400px;
+  margin: auto;
+  text-align: center;
+  background-color: darkgrey;
+  padding: 20px 20px 20px 20px;
+  border-radius: 5px;
+  border: 2px solid red;
+}

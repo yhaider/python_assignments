@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Great Number Game</title>
+    <link rel="stylesheet" type = 'text/css' href="{{url_for('static', filename = 'gng_style.css')}}">
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Welcome to the Great Number Game!</h1>
+      <p>I am currently thinking of a number between 0 and 100...</p>
+      <p>Think you can guess what it is? Try me.</p>
+
+
+      {% if status == "low" %}
+        <div id="toolow">
+          <h2>Too low!</h2>
+          <p><i>Your skills are clearly lacking...</i></p>
+        </div>
+        <form class="input" action="/checking" method="post">
+          <input type="text" name="guess" value="">
+          <input type="submit" name="submit" value="Submit">
+        </form>
+      {% endif %}
+
+      {% if status == "high" %}
+        <div id="toohigh">
+          <h2>Too high!</h2>
+          <p><i>You're proving to be an easy opponent...</i></p>
+        </div>
+        <form class="input" action="/checking" method="post">
+          <input type="text" name="guess" value="">
+          <input type="submit" name="submit" value="Submit">
+        </form>
+      {% endif %}
+
+      {% if status == "correct" %}
+        <div id="correct">
+          <h2>{{ session['actual'] }} was the number!</h2>
+          <p><i>Damn it, you win...</i></p>
+          <p><i>Rematch...?</i></p>
+          <a href = "/reset"><button type="button" name="Rematch">Rematch</button></a>
+        </div>
+      {% endif %}
+      <p>guess: {{ guess }}</p>
+      <p>status: {{ status }}</p>
+
+    </div>
+  </body>
+</html>
