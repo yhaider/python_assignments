@@ -1,0 +1,1 @@
+These are the assignments used to learn and understand object oriented programming. The instructions for each assignment are at the top of the respective file.

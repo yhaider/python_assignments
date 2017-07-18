@@ -1,0 +1,1 @@
+This was an assignment that the Coding Dojo platform helped us make step by step in order to ease into using Flask and to begin understanding how to use it.

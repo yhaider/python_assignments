@@ -1,3 +1,7 @@
+# Assignment: Checkerboard
+# Write a program that prints a 'checkerboard' pattern to the console
+
+
 #Checkerboard
 
 def checker():

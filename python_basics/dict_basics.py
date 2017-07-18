@@ -1,3 +1,7 @@
+# Assignment: Making and Reading from Dictionaries
+# Create a dictionary containing some information about yourself. The keys should include name, age, country of birth, favorite language.
+
+
 #Making and Reading from Dictionaries
 
 def info(name, age, bp, favelang): #this allows user to input whatever name, age, bp, and fave lang values

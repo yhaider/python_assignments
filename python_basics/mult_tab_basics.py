@@ -1,3 +1,8 @@
+# Optional Assignment: Multiplication Table
+# Create a program that prints a multiplication table in your console.
+
+
+
 #Multiplication Table
 
 def mult():

@@ -1,3 +1,7 @@
+# Assignment: Making Dictionaries
+# Create a function that takes in two lists and creates a single dictionary where the first list contains keys and the second values. Assume the lists will be of equal length.
+
+
 #Making Dictionaries
 
 """

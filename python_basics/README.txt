@@ -1,0 +1,1 @@
+These assignments were meant to introduce us to python syntax. Each assignment has the instructions commented at the top of the file. 

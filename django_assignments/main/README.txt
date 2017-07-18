@@ -1,0 +1,1 @@
+This was the first assignment we walked through to learn Django. Coding Dojo’s platform gave us explanations as to what to do and allowed us to understand the documentation and how to use Django in a basic project.
