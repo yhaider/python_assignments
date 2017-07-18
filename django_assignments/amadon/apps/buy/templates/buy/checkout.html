@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Thank You!</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Dosis');
+    </style>
+    <style type="text/css">
+      *{
+        margin: 0px;
+        padding: 0px;
+      }
+      .checkout{
+        margin-left: 500px;
+        margin-top: 200px;
+        padding: 20px;
+        width: 300px;
+        border: 1px dashed black;
+        font-family: 'Dosis', sans-serif;
+        border-radius: 5px;
+        border: 2px solid black;
+      }
+      h2{
+        margin-bottom: 10px;
+      }
+      button{
+        margin-left: 120px;
+        margin-top: 5px;
+        padding: 5px 10px 5px 10px;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="checkout">
+      <h2>Thank you for your business!</h2>
+      <p>We charged your credit card ${{ request.session.charge }}.</p>
+      <p>You have ordered {{ request.session.item_count }} items so far and spent ${{ request.session.totalspent }} with Amadon.com!</p>
+      <a href="/"><button type="button" name="back">Back</button></a>
+    </div>
+  </body>
+</html>

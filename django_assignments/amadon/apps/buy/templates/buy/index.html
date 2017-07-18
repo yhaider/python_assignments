@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Amadon</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Dosis');
+    </style>
+    <style type="text/css">
+      *{
+        margin: 0px;
+        padding: 0px;
+      }
+      body{
+        font-family: 'Dosis', sans-serif;
+      }
+      table{
+        border: 1px solid black;
+        margin: auto;
+        text-align: center;
+        background-color: grey;
+      }
+      th, td{
+        padding: 20px;
+        border: 1px solid black;
+      }
+      th{
+        background-color: darkgrey;
+      }
+      td{
+        background-color: silver;
+      }
+      .store{
+        width: 500px;
+        background-color: #b7b7b7;
+        padding: 10px;
+        margin: auto;
+        text-align: center;
+        margin-top: 10%;
+        border-radius: 5px;
+        border: 2px solid black;
+      }
+      h2{
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="store">
+      <h2>Amadon Store</h2>
+      <table>
+        <tr>
+          <th>Item</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Actions</th>
+        </tr>
+        <tr><form action="/process" method="post">
+          {% csrf_token %}
+          <td><input type="hidden" name="id" value="1">Dojo Sweatshirt</td>
+          <td><input type="hidden" name="price" value="19.99">$19.99</td>
+          <td><select name="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select></td>
+          <td><input type="submit" name="buy" value="Buy"></td>
+        </form></tr>
+        <tr><form action="/process" method="post">
+          {% csrf_token %}
+          <td><input type="hidden" name="id" value="2">Dojo Sweater</td>
+          <td><input type="hidden" name="price" value="29.99">$29.99</td>
+          <td><select name="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select></td>
+          <td><input type="submit" name="buy" value="Buy"></td>
+        </form></tr>
+        <tr><form action="/process" method="post">
+          {% csrf_token %}
+          <td><input type="hidden" name="id" value="3">Dojo Mug</td>
+          <td><input type="hidden" name="price" value="9.99">$9.99</td>
+          <td><select name="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select></td>
+          <td><input type="submit" name="buy" value="Buy"></td>
+        </form></tr>
+        <tr><form action="/process" method="post">
+          {% csrf_token %}
+          <td><input type="hidden" name="id" value="4">Algorithm Book</td>
+          <td><input type="hidden" name="price" value="49.99">$49.99</td>
+          <td><select name="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select></td>
+          <td><input type="submit" name="buy" value="Buy"></td>
+        </form></tr>
+      </table>
+    </div>
+  </body>
+</html>

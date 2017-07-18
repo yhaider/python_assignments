@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Session Words</title>
+    <style type="text/css">
+      *{
+        margin: 0px;
+        padding: 0px;
+      }
+      body{
+        display: flex;
+        margin-left: 250px;
+        margin-top: 20px;
+      }
+      .addnew{
+        width:300px;
+        padding: 50px;
+        margin-left: 20px;
+        border: 1px solid black;
+      }
+      .words{
+        width: 300px;
+        padding: 50px;
+        margin-left: 10px;
+        border: 1px solid white;
+        background-color: black;
+        color: white;
+      }
+
+      .text{
+        margin-bottom: 10px;
+      }
+      .color{
+        margin-bottom: 10px;
+      }
+      .check{
+        margin-bottom: 10px;
+      }
+      .Blue{
+        color: blue;
+      }
+      .Green{
+        color: green;
+      }
+      .Red{
+        color: red;
+      }
+      .big{
+        font-size: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="addnew">
+      <form class="" action="/sw/add" method="post">
+        {% csrf_token %}
+        <h2>Add a Word</h2><br>
+        <input type="word" name="word" value="" class="text"><br>
+        <label for="colour">Choose colour:</label><br>
+        <input type="radio" name="color" value="Blue"><label for="blue"> Blue</label><br>
+        <input type="radio" name="color" value="Red"><label for="red"> Red</label><br>
+        <input type="radio" name="color" value="Green" class="color"><label for="green"> Green</label><br>
+        <label for="big"> Choose your font size:</label><br>
+        <input type="radio" name="big" value="big"><label for="big"> Big</label><br>
+        <input type="radio" name="big" value="normal"><label for="normal"> Regular</label><br>
+        <input type="submit" name="submit" value="Add to Session!">
+      </form>
+    </div>
+    <div class="words">
+      <form class="clear" action="/sw/clear" method="post">
+        {% csrf_token %}
+        <input type="submit" name="clear" value="Clear Session">
+      </form>
+      {% if request.session.list %}
+        {% for dict in request.session.list %}
+          <p class = "{{ dict.color }} {{ dict.big }}"> {{ dict.word }}</p><p> -added at {{ dict.time }}</p>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </body>
+</html>
