@@ -1,0 +1,119 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf820
+{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fnil\fcharset0 LucidaGrande;\f2\fnil\fcharset0 LucidaGrande-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red63\green63\blue63;\red255\green255\blue255;\red63\green63\blue63;
+\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c31373\c31373\c31373;\cssrgb\c100000\c100000\c100000;\cssrgb\c31373\c31373\c31373;
+\cssrgb\c100000\c100000\c100000;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid2\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid102\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ri200\sl504\partightenfactor0
+\ls1\ilvl0
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Create 5 books with the following names: C sharp, Java, Python, PHP, Ruby:
+\b0 \
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\ri200\sl504\partightenfactor0
+\ls1\ilvl1\cf2 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}Book.objects.create(name = \'93C Sharp\'94, desc = \'93about C Sharp\'94)\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\ri200\sl504\partightenfactor0
+\ls1\ilvl1\cf4 \cb5 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+Book.objects.create(name = \'93Java\'94, desc = \'93about Java\'94)		Book.objects.create(name = \'93Python\'94, desc = \'93about python\'94)	Book.objects.create(name = \'93PHP\'94, desc = \'93about php\'94)	Book.objects.create(name = \'93Ruby\'94, desc = \'93about ruby\'94)\cf2 \cb1 \outl0\strokewidth0 \strokec2 \
+\ls1\ilvl1
+\b  Create 5 different authors: Mike, Speros, John, Jadee Jay:\
+		
+\b0 Author.objects.create(first_name = \'93Mike\'94, last_name = \'93M\'94, email = \'93mike@email.com\'94)\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\ri920\sl504\partightenfactor0
+\ls2\ilvl1
+\b \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	
+\f2 \uc0\u8259 
+\f0 	}
+\b0 \expnd0\expndtw0\kerning0
+Author.objects.create(first_name = \'93Speros\'94, last_name = \'93M\'94, email = \'93speros@email.com\'94)\
+\ls2\ilvl1
+\b {\listtext	
+\f2 \uc0\u8259 
+\f0 	}
+\b0 Author.objects.create(first_name = \'93Jadee\'94, last_name = \'93M\'94, email = \'93jadee@email.com\'94)
+\b 	
+\b0 Author.objects.create(first_name = \'93John\'94, last_name = \'93M\'94, email = \'93john@email.com\'94)
+\b 	
+\b0 Author.objects.create(first_name = \'93Jay\'94, last_name = \'93M\'94, email = \'93jay@email.com\'94)\
+\pard\tx720\tx1440\pardeftab720\ri920\sl504\partightenfactor0
+\cf4 \
+
+\b Change the name of the fifth book to C#
+\b0 \
+		a = Book.objects.last()\
+		a.name = \'93C#\'94\
+		a.save()\
+\
+
+\b Change the first_name of the 5th author to Ketul
+\b0 \
+		b = Author.objects.last()\
+		b.first_name = \'93Ketul\'94\
+		b.save()\
+\
+
+\b Assign the first author to the first 2 books\
+
+\b0 	Author.objects.first().books.add(Book.object.first())\
+	\cf4 Author.objects.first().books.add(Book.object.get(id=2))\cf4 \
+\
+
+\b Assign the second author to the first 3 books\
+\pard\tx720\tx1440\pardeftab720\ri920\sl504\partightenfactor0
+
+\b0 \cf4 	Author.objects.get(id=2).books.add(Book.object.first())\
+	Author.objects.get(id=2).books.add(Book.object.get(id=2))\
+	Author.objects.get(id=2).books.add(Book.object.get(id=3))\
+\
+
+\b Assign the third author to the first 4 books\
+
+\b0 	Author.objects.get(id=3).books.add(Book.object.first())\
+	Author.objects.get(id=3).books.add(Book.object.get(id=2))\
+	Author.objects.get(id=3).books.add(Book.object.get(id=3))\
+	Author.objects.get(id=3).books.add(Book.object.get(id=4))
+\b \
+\
+Assign the fourth author to the first 5 books
+\b0 \cf4 \
+\cf4 	Author.objects.get(id=4).books.add(Book.object.first())\
+	Author.objects.get(id=4).books.add(Book.object.get(id=2))\
+	Author.objects.get(id=4).books.add(Book.object.get(id=3))\
+	Author.objects.get(id=4).books.add(Book.object.get(id=4))\
+	Author.objects.get(id=4).books.add(Book.object.get(id=5))\
+\
+
+\b For the 3rd book, retrieve all the authors\
+
+\b0 	Book.objects.get(id=3).authors.values()\
+\
+
+\b For the 3rd book, remove the first author\
+	
+\b0 Book.objects.get(id=3).authors.first().delete()
+\b \
+
+\b0 	
+\b \
+For the 2nd book, add the 5th author as one of the authors\
+	
+\b0 Book.objects.get(id=3).authors.add(Author.object.get(id=5))
+\b \
+\
+Find all books by the 3rd author\
+	
+\b0 Author.objects.get(id=3).books.values()
+\b \
+\
+Find all books by the 2nd author\
+	
+\b0 Author.objects.get(id=2).books.values()}

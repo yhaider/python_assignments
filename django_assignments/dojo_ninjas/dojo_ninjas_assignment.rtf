@@ -1,0 +1,104 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf820
+{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fnil\fcharset0 AndaleMono;}
+{\colortbl;\red255\green255\blue255;\red63\green63\blue63;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c31373\c31373\c31373;\csgenericrgb\c0\c0\c0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid2\'02\'01.;}{\levelnumbers\'01;}\fi-360\li1440\lin1440 }{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid3\'02\'02.;}{\levelnumbers\'01;}\fi-360\li2160\lin2160 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\ri200\sl504\partightenfactor0
+\ls1\ilvl1
+\f0\fs28 \cf2 {\listtext	1.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Start a new app (the name of the app should be\'a0
+\i 'dojo_ninjas'
+\i0 )\
+\ls1\ilvl1\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Create appropriate tables/models that allows you to perform tasks such as\
+\pard\tx1660\tx2160\pardeftab720\li2160\fi-2160\ri200\sl504\partightenfactor0
+\ls1\ilvl2\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Dojo.objects.first().ninjas\
+\ls1\ilvl2\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Ninja.objects.first().dojo\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\ri200\sl504\partightenfactor0
+\ls1\ilvl1\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Using\'a0Django Shell:\
+\pard\tx1660\tx2160\pardeftab720\li2160\fi-2160\ri200\sl504\partightenfactor0
+\ls1\ilvl2\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Create 3 dojos\
+\ls1\ilvl2\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Delete the three dojos you created (e.g.\'a0
+\i Dojo.objects.get(id=1).delete()
+\i0 )\
+\ls1\ilvl2\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Create 3 additional dojos by using\'a0
+\i Dojo.objects.create
+\i0 \
+\ls1\ilvl2\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	4.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Create 3 ninjas that belong to the first dojo you created.\
+\ls1\ilvl2\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	5.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Create 3 more ninjas and have them belong to the second dojo you created.\
+\ls1\ilvl2\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	6.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Create 3 more ninjas and have them belong to the third dojo you created.\
+\ls1\ilvl2\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	7.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Be able to retrieve all ninjas that belong to the first Dojo\
+\ls1\ilvl2\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	8.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Be able to retrieve all ninjas that belong to the last Dojo\
+\pard\tx720\tx1440\tx2160\pardeftab720\ri200\sl504\partightenfactor0
+\cf2 \
+Assignment in my terminal shell:\
+\cf3 \cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs24 \cf3 \kerning1\expnd0\expndtw0 \CocoaLigature0 \outl0\strokewidth0 >>> from apps.dn.models import Dojos, Ninjas\
+>>> Dojos.objects.create(name = "Dojo One", city = "Chicago", state = "IL")\
+<Dojos: Dojos object>\
+>>> Dojos.objects.create(name = "Dojo Two", city = "Los Angeles", state ="CA")\
+<Dojos: Dojos object>\
+>>> Dojos.objects.create(name = "Dojo Three", city = "Potomac", state ="MD")\
+<Dojos: Dojos object>\
+\
+>>> Dojos.objects.get(id=1).delete()\
+(1, \{u'dn.Dojos': 1, u'dn.Ninjas': 0\})\
+>>> Dojos.objects.get(id=2).delete()\
+(1, \{u'dn.Dojos': 1, u'dn.Ninjas': 0\})\
+>>> Dojos.objects.get(id=3).delete()\
+(1, \{u'dn.Dojos': 1, u'dn.Ninjas': 0\})\
+\
+>>> Dojos.objects.create(name = "Dojo Four", city = "Dover", state ="DE")\
+<Dojos: Dojos object>\
+>>> Dojos.objects.create(name = "Dojo Five", city = "Falls Church", state ="VA")\
+<Dojos: Dojos object>\
+>>> Dojos.objects.create(name = "Dojo Six", city = "Denver", state ="CO")\
+<Dojos: Dojos object>\
+\
+>>> Ninjas.objects.create(first_name = "Yasmeen", last_name = "Haider", dojo = Dojos.objects.get(id=4))\
+<Ninjas: Ninjas object>\
+>>> Ninjas.objects.create(first_name = "Isaac", last_name = "Suntag", dojo = Dojos.objects.get(id=4))\
+<Ninjas: Ninjas object>\
+>>> Ninjas.objects.create(first_name = "Will", last_name = "Goode", dojo = Dojos.objects.get(id=4))\
+<Ninjas: Ninjas object>\
+>>> Ninjas.objects.create(first_name = "Rob", last_name = "Dahal", dojo = Dojos.objects.get(id=5))\
+<Ninjas: Ninjas object>\
+>>> Ninjas.objects.create(first_name = "Joe", last_name = "Doe", dojo = Dojos.objects.get(id=5))\
+<Ninjas: Ninjas object>\
+>>> Ninjas.objects.create(first_name = "Katie", last_name = "Picker", dojo = Dojos.objects.get(id=5))\
+<Ninjas: Ninjas object>\
+\
+>>> Dojos.objects.all().values()\
+<QuerySet [\{'city': u'Dover', 'state': u'DE', u'id': 4, 'name': u'Dojo Four'\}, \{'city': u'Falls Church', 'state': u'VA', u'id': 5, 'name': u'Dojo Five'\}, \{'city': u'Denver', 'state': u'CO', u'id': 6, 'name': u'Dojo Six'\}]>\
+\
+>>> Ninjas.objects.create(first_name = "Dan", last_name = "Oostra", dojo = Dojos.objects.get(id=6))\
+<Ninjas: Ninjas object>\
+>>> Ninjas.objects.create(first_name = "Tysons", last_name = "Corner", dojo = Dojos.objects.get(id=6))\
+<Ninjas: Ninjas object>\
+>>> Ninjas.objects.create(first_name = "Leonardo", last_name = "diCaprio", dojo = Dojos.objects.get(id=6))\
+<Ninjas: Ninjas object>\
+\
+>>> Dojos.objects.first().ninjas.all().values()\
+<QuerySet [\{u'dojo_id': 4, 'first_name': u'Yasmeen', 'last_name': u'Haider', u'id': 1\}, \{u'dojo_id': 4, 'first_name': u'Isaac', 'last_name': u'Suntag', u'id': 2\}, \{u'dojo_id': 4, 'first_name': u'Will', 'last_name': u'Goode', u'id': 3\}]>\
+\
+>>> Dojos.objects.last().ninjas.all().values()\
+<QuerySet [\{u'dojo_id': 6, 'first_name': u'Dan', 'last_name': u'Oostra', u'id': 7\}, \{u'dojo_id': 6, 'first_name': u'Tysons', 'last_name': u'Corner', u'id': 8\}, \{u'dojo_id': 6, 'first_name': u'Leonardo', 'last_name': u'diCaprio', u'id': 9\}]>
+\f0\fs28 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec2 \
+}
