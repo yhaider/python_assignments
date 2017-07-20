@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Show</title>
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'users/css/bootstrap.min.css' %}">
+
+  </head>
+  <body>
+    <div class="container-fluid text-center">
+      <h2>User {{user.id}}</h2>
+        <p><b>ID: </b>{{ user.id }}</p>
+        <p><b>Name: </b>{{ user.name }}</p>
+        <p><b>Email: </b>{{ user.email }}</p>
+        <p><b>Created at: </b>{{ user.created_at }}</p>
+      <a href="/users/{{user.id}}/edit">Edit</a> |
+      <a href="/users/{{user.id}}/destroy">Destroy</a> |
+      <a href="/users">Go Back</a>
+    </div>
+  </body>
+</html>

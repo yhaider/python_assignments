@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit User</title>
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'users/css/bootstrap.min.css' %}">
+
+  </head>
+  <body>
+    <div class="container-fluid text-center">
+      <h2>Edit User {{ user.id }}</h2>
+      <form action="/users/{{ user.id }}" method="post">
+        {% csrf_token %}
+        Name: <input type="text" name="name" value="{{ user.name }}"><br>
+        Email: <input type="text" name="email" value="{{ user.email }}"><br>
+        <input class = "btn btn-info" type="submit" name="Update">
+      </form>
+      <p><a href="/users/{{ user.id }}">Show</a> | <a href="/users">Go Back</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Users</title>
+      {% load static %}
+    <link rel="stylesheet" href="{% static 'users/css/bootstrap.min.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h2 class= "text-center">Users</h2>
+      <table class="table table-striped table-hover table-condensed">
+        <tr>
+          <th class="col-sm-1">id</th>
+          <th class="col-sm-1">Full Name</th>
+          <th class="col-sm-1">Email</th>
+          <th class="col-sm-1">Created At</th>
+          <th class="col-sm-1">Actions</th>
+        </tr>
+        {% if users %}
+          {% for user in users %}
+            <tr>
+              <td class="col-sm-1">{{ user.id }}</td>
+              <td class="col-sm-1">{{ user.name }}</td>
+              <td class="col-sm-1">{{ user.email }}</td>
+              <td class="col-sm-1">{{ user.created_at }}</td>
+              <td class="col-sm-1">
+                <div class="btn-group btn-group-xs">
+                  <a href="/users/{{ user.id }}"><button class = "btn btn-info" type="button" name="button">Show</button></a>
+                  <a href="/users/{{ user.id }}/edit"><button class = "btn btn-info" type="button" name="button">Edit</button></a>
+                  <a href="/users/{{ user.id }}/destroy"><button class = "btn btn-info" type="button" name="button">Destroy</button></a>
+              </td>
+                </div>
+            </tr>
+          {% endfor %}
+        {% endif %}
+      </table>
+      <div class="text-center">
+        <a href="/users/new"><button class = "btn btn-info" type="button" name="button">Add a new user</button></a>
+      </div>
+    </div>
+  </body>
+</html>

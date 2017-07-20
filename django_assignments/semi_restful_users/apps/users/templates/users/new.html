@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add User</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/css/bootstrap.min.css' %}">
+
+  </head>
+  <body class = "col-sm-offset-4">
+    <h2>Add User</h2>
+    <form class="form-horizontal" action="/users/create" method="post">
+      {% csrf_token %}
+      <div class="form-group input-group col-sm-4">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input type="text" name="name" placeholder="Full name here..." class="form-control ">
+      </div>
+      <div class="form-group input-group col-sm-4">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+        <input type="text" name="email" placeholder="Email here..." class="form-control ">
+      </div>
+      <div class="btn-group col-sm-offset-2">
+        <input type="submit" name="Add" class = "btn btn-info">
+        <a href="/users"><button type="button" name="button" class = "btn btn-info">Go back</button></a>
+      </div>
+    </form>
+
+  </body>
+</html>
