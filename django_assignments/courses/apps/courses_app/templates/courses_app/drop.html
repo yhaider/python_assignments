@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Confirm Drop</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'courses_app/bootstrap.min.css' %}">
+  </head>
+  <body>
+    <div class="col-sm-offset-3 col-sm-6">
+      <h2>Dropping || {{ course.name }}</h2>
+      <p>Name: {{ course.name }}</p>
+      <p>Description: {{ course.desc }}</p>
+      <div>
+        <a href="/"><button type="button" name="button" class = "btn btn-sm btn-info">Nevermind</button></a>
+        <a href="/process/{{ course.id }}"><button type="button" name="button" class="btn btn-sm btn-info">Drop</button></a>
+      </div>
+    </div>
+  </body>
+</html>
