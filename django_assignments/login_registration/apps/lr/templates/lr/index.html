@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login and Registration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'courses_app/bootstrap.min.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+      .errormessage{
+        background-color: gainsboro;
+        border-radius: 7px;
+        border: none;
+        padding: 10px;
+        margin: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Welcome</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Register</a></li>
+      </ul>
+    </nav>
+    <div class = "col-sm-offset-4 col-sm-4">
+
+      <div class="form-horizontal">
+        <h2>Login</h2>
+        <form class="" action="/login" method="post">
+          {% csrf_token %}
+          Email: <input class = "form-control" type="text" name="email" placeholder="Registered email here..."><br>
+          <div>
+            {% if messages %}
+              {% for message in messages %}
+                {% if 'no_email' in message.tags %}
+                <div class="alert alert-danger alert-dismissable fade in">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Required field:</strong> {{ message}}
+                </div>
+                {% endif %}
+                {% if 'email_valid' in message.tags %}
+                <div class="alert alert-danger alert-dismissable fade in">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Required field:</strong> {{ message}}
+                </div>
+                {% endif %}
+                {% if 'email_exist' in message.tags %}
+                <div class="alert alert-danger alert-dismissable fade in">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Required field:</strong> {{ message}}
+                </div>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          </div>
+          Password: <input class = "form-control" type="password" name="password"><br>
+          <div>
+            {% if messages %}
+              {% for message in messages %}
+                {% if 'no_pass' in message.tags %}
+                <div class="alert alert-danger alert-dismissable fade in">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Required field:</strong> {{ message}}
+                </div>
+                {% endif %}
+                {% if 'short_pass' in message.tags %}
+                <div class="alert alert-danger alert-dismissable fade in">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Required field:</strong> {{ message}}
+                </div>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          </div>
+          <input class = "btn btn-info col-sm-offset-10" type="submit" name="Login" value = "Login">
+        </form>
+      </div>
+      <div class="form-horizontal">
+        <h2>Registration</h2>
+        <form class="" action="/register" method="post">
+          {% csrf_token %}
+          First Name: <input class = "form-control" type="text" name="fname" placeholder="First name here..."><br>
+          <div>
+            {% if messages %}
+              {% for message in messages %}
+                {% if 'fnamelen' in message.tags %}
+                <div class="alert alert-danger alert-dismissable fade in">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Required field:</strong> {{ message}}
+                </div>
+                {% endif %}
+                {% if 'fnamevalid' in message.tags %}
+                <div class="alert alert-danger alert-dismissable fade in">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Required field:</strong> {{ message}}
+                </div>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          </div>
+          Last Name: <input class = "form-control" type="text" name="lname" placeholder="Last name here..."><br>
+          <div>
+            {% if messages %}
+              {% for message in messages %}
+                {% if 'lnamelen' in message.tags %}
+                <div class="alert alert-danger alert-dismissable fade in">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Required field:</strong> {{ message}}
+                </div>
+                {% endif %}
+                {% if 'lnamevalid' in message.tags %}
+                <div class="alert alert-danger alert-dismissable fade in">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Required field:</strong> {{ message}}
+                </div>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          </div>
+          Email: <input class = "form-control" type="text" name="email" placeholder="Email here..."><br>
+          <div>
+            {% if messages %}
+              {% for message in messages %}
+                {% if 'emaillen' in message.tags %}
+                <div class="alert alert-danger alert-dismissable fade in">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Required field:</strong> {{ message}}
+                </div>
+                {% endif %}
+                {% if 'emailvalid' in message.tags %}
+                <div class="alert alert-danger alert-dismissable fade in">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Required field:</strong> {{ message}}
+                </div>
+                {% endif %}
+                {% if 'emailtaken' in message.tags %}
+                <div class="alert alert-danger alert-dismissable fade in">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Required field:</strong> {{ message}}
+                </div>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          </div>
+          Password: <input class = "form-control" type="password" name="password"><br>
+          <div>
+            {% if messages %}
+              {% for message in messages %}
+                {% if 'passlen' in message.tags %}
+                <div class="alert alert-danger alert-dismissable fade in">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Required field:</strong> {{message}}
+                </div>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          </div>
+          Confirm Password: <input class = "form-control" type="password" name="conpass"><br>
+          <div>
+            {% if messages %}
+              {% for message in messages %}
+                {% if 'passconpass' in message.tags %}
+                <div class="alert alert-danger alert-dismissable fade in">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Required field:</strong> {{ message }}
+                </div>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          </div>
+          <input class = "btn btn-info col-sm-offset-10" type="submit" name="Register" value = "Register">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

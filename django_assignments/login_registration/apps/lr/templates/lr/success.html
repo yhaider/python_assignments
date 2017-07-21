@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Success</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'courses_app/bootstrap.min.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body class = "col-sm-offset-5 col-sm-4">
+    <h1>Welcome {{ request.session.name }}!</h1>
+    <a href="/"><button class = "btn btn-info col-sm-offset-4" type="button" name="button">Back</button></a>
+  </body>
+</html>
