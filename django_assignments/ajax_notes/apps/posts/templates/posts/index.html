@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>The NoteBoard</title>
+        {% load static %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+        @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+        </style>
+        <style type="text/css">
+            .backgroundimage{
+                background-image: url(http://new.graphicpanic.com/wp-content/uploads/2015/06/bulletin-board-background.jpg);
+            }
+            .headerbg{
+                background-color: #3d0501;
+                padding: 5px 10px 5px 10px;
+                border-radius: 7px;
+                border: none;
+                margin-bottom: 10px;
+                color: white;
+            }
+        </style>
+    </head>
+    <body class="backgroundimage">
+        <div  class="text-center headerbg">
+            <h3>The NoteBoard</h3>
+            <p>Add anonymous notes to the noteboard!</p>
+        </div>
+        <div class="container">
+            {% if posts %}
+                {% for post in posts %}
+                    <div class="col-sm-3">
+                        <div class="panel panel-warning" style = "height: 200px; font-family: 'Indie Flower', cursive;">
+                            <div class="panel-heading" style = "font-size:18px;">
+                                <b>{{post.created_at}}  </b><a href="/delete/{{post.id}}"><span class="glyphicon glyphicon-trash pull-right" style="font-size:10px;"></span></a><br>
+                            </div>
+                            <div class="panel-body">
+                                {{post.content}}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        <div class="form">
+            <form class="form-group" action="/post" method="post">
+                {% csrf_token %}
+                <textarea name="content" class="form-control" rows="5" cols="40" placeholder="Add your own post it..."></textarea><br>
+                <input type="submit" name="post" value="Post It!" class="btn btn-info form-control pull-right" style = "width: 100px;">
+            </form>
+        </div>
+    </div>
+    </body>
+</html>

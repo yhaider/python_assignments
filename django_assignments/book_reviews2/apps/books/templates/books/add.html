@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Add Book</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'courses_app/bootstrap.min.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body class = "col-sm-offset-4 col-sm-5">
+        <div class="">
+            <a href="/books">Home</a> <a href="/logout">Logout</a>
+        </div>
+        <div class="">
+            <h3>Add a New Book Title and a Review:</h3>
+            <form class="" action="/processadd" method="post">
+                {% csrf_token %}
+                Book Title: <input type="text" name="title" value=""><br>
+                Author:<br>
+                    Choose from the list: <select class="" name="author">
+                        <option>--</option>
+                        {% if Author %}
+                            {% for author in Author %}
+                                <option>{{ author.name }}</option>
+                            {% endfor %}
+                        {% endif %}
+                    </select><br>
+                    Or add a new author: <input type="text" name="author_new" value=""><br>
+                Review: <br>
+                    <textarea name="review" rows="5" cols="40"></textarea><br>
+                Rating: <select class="" name="rating">
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select><br>
+                <input type="submit" name="add" value="Add Book and Review">
+            </form>
+        </div>
+    </body>
+</html>

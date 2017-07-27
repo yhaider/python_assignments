@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Home</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'courses_app/bootstrap.min.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="">
+            <h2>Welcome {{request.session.alias}}!</h2>
+            <a href="/books/add">Add Book and Review</a> <a href="/logout">Logout</a>
+        </div>
+        <div class="">
+            <h4>Recent Book Reviews:</h4>
+        </div>
+        <div class="">
+            <h4>Other Books with Reviews</h4>
+            <textarea name="name" rows="8" cols="80"></textarea>
+        </div>
+    </body>
+</html>
