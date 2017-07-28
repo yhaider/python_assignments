@@ -22,35 +22,68 @@
                 margin-bottom: 10px;
                 color: white;
             }
+            .pin{
+                text-align: center;
+                color: #3d0501;
+                font-size: 30px;
+                position: relative;
+                top: 20px;
+            }
         </style>
     </head>
     <body class="backgroundimage">
         <div  class="text-center headerbg">
-            <h3>The NoteBoard</h3>
-            <p>Add anonymous notes to the noteboard!</p>
+            <h3><span style="opacity: 0.7;" class="glyphicon glyphicon-pushpin"></span> The NoteBoard</h3>
+            <p style="opacity: 0.7;"><i>Add anonymous notes to the noteboard!</i></p>
         </div>
         <div class="container">
-            {% if posts %}
-                {% for post in posts %}
-                    <div class="col-sm-3">
-                        <div class="panel panel-warning" style = "height: 200px; font-family: 'Indie Flower', cursive;">
-                            <div class="panel-heading" style = "font-size:18px;">
-                                <b>{{post.created_at}}  </b><a href="/delete/{{post.id}}"><span class="glyphicon glyphicon-trash pull-right" style="font-size:10px;"></span></a><br>
+            <div id="posts">
+                {% if posts %}
+                    {% for post in posts %}
+                        <div class="col-sm-3">
+                            <div class="pin">
+                                <span class="glyphicon glyphicon-pushpin"></span>
                             </div>
-                            <div class="panel-body">
-                                {{post.content}}
+                            <div class="panel panel-warning" style = "height: 200px; font-family: 'Indie Flower', cursive;">
+                                <div class="panel-heading" style = "font-size:18px;">
+                                    <b>{{post.created_at}}  </b><a href="/delete/{{post.id}}" id="trash" style="color:#3d0501;"><span class="glyphicon glyphicon-trash pull-right" style="font-size:10px;"></span></a><br>
+                                </div>
+                                <div class="panel-body">
+                                    {{post.content}}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                {% endfor %}
-            {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
         <div class="form">
             <form class="form-group" action="/post" method="post">
                 {% csrf_token %}
                 <textarea name="content" class="form-control" rows="5" cols="40" placeholder="Add your own post it..."></textarea><br>
-                <input type="submit" name="post" value="Post It!" class="btn btn-info form-control pull-right" style = "width: 100px;">
+                <label for="post" class="btn pull-right" style="background-color:#3d0501; color:white; width:80px;" ><span class="glyphicon glyphicon-share"></span></label>
+                <input id = "post" type="submit" name="post" class="hidden">
             </form>
         </div>
     </div>
     </body>
+    <script type="text/javascript">
+        $('form').submit(function(e){
+            e.preventDefault();
+            $.ajax({
+                url:'/post',
+                method: 'post',
+                data:$(this).serialize(),
+                success: function(serverResponse){
+                    $('#posts').html(serverResponse)
+                },
+            })
+            $(this).trigger('reset')
+        })
+
+        $(document).on('click', "#trash", function(f){
+            f.preventDefault();
+            var target = $(this).attr("href");
+            $("#posts").load(target)
+        })
+    </script>
 </html>
